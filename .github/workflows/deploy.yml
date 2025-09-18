@@ -1,21 +1,31 @@
-name: Build and deploy on github pages
+name: Deploy React App to GitHub Pages
+
 on:
   push:
     branches:
-      - "main"
+      - main  # main ブランチに push したら自動デプロイ
+
 jobs:
-  publish:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy-pages-step.outputs.page_url }}
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/upload-pages-artifact@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          path: "public"
-      - uses: actions/deploy-pages@v4
-        id: deploy-pages-step
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build  # package.jsonのbuildスクリプトでビルド
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build  # buildフォルダをデプロイ
