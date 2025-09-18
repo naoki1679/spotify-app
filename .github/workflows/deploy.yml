@@ -1,0 +1,21 @@
+name: Build and deploy on github pages
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages-step.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "public"
+      - uses: actions/deploy-pages@v4
+        id: deploy-pages-step
