@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>test</title>
+                <link rel="stylesheet" href="a.css">
+                <!-- ReactとReactDOMをCDNから読み込む -->
+                <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+                <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+                <!-- JSXを使うためのBabel -->
+                <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+            </head>
+            <body>
+                <h1>カウンターアプリ</h1>
+                <div id="root"></div>
+
+                <script type="text/babel">
+                    function CountApp() {
+                        const [count, setCount] = React.useState(0);
+                        
+                        const countAdd = () => {
+                            setCount(count + 1);
+                        }
+
+                        const countSub = () => {
+                            if (count>0) {
+                                setCount(count - 1);
+                            }
+                        }
+
+                        const countRes = () => {
+                            setCount(0);
+                        }
+                        
+                        return(
+                            <div>
+                                <button onClick={countAdd}>ADD</button>
+                                <button onClick={countSub}>SUB</button>
+                                <button onClick={countRes}>RESET</button>
+                                <h3>現在の数＝{count}</h3>
+                            </div>
+                        )
+                    }
+                    const root = ReactDOM.createRoot(document.getElementById('root'));
+                    root.render(<CountApp />);
+                </script>
+            </body>
+        </html>
