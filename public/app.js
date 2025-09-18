@@ -3,7 +3,7 @@ function App() {
 
   React.useEffect(() => {
     // VercelでデプロイしたAPIのURLに変更
-    fetch("https://<あなたのプロジェクト名>.vercel.app/api/songs")
+    fetch("https://kara-api.vercel.app/api/songs")
       .then(res => res.json())
       .then(data => setSongs(data))
       .catch(err => console.error("APIエラー:", err));
