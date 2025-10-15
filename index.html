@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>カラキン</title>
-    <!-- React と ReactDOM を CDN から読み込み -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <!-- JSX を使うための Babel -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- React コード -->
-    <script src="app.js" type="text/babel" defer></script>
+    <title>あなたのSpotifyトップトラック</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <p>カラキン</p>
-</body>
+    <div class="container">
+        <header>
+            <h1>あなたのSpotifyトップトラック</h1>
+            <p>過去6ヶ月であなたが最もよく聴いた曲のランキングです。</p>
+        </header>
 
+        <main id="main-content">
+            <div id="login-section">
+                <button id="login-button">Spotifyと連携してトップ20曲を表示</button>
+            </div>
+            <div id="ranking-section" class="hidden">
+                <h2>👑 トップ20ランキング</h2>
+                <ol id="track-list"></ol>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
