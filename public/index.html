@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたのSpotifyトップトラック</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>あなたのSpotifyトップトラック</h1>
+            <p>過去6ヶ月であなたが最もよく聴いた曲のランキングです。</p>
+        </header>
+
+        <main id="main-content">
+            <div id="login-section">
+                <button id="login-button">Spotifyと連携してトップ20曲を表示</button>
+            </div>
+            <div id="ranking-section" class="hidden">
+                <h2>👑 トップ20ランキング</h2>
+                <ol id="track-list"></ol>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

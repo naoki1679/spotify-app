@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #1DB954; /* Spotify Green */
+}
+
+#login-button {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1DB954;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-button:hover {
+    background-color: #1ed760;
+}
+
+#ranking-section h2 {
+    text-align: center;
+    color: #1DB954;
+}
+
+.hidden {
+    display: none;
+}
+
+#track-list {
+    list-style: none;
+    padding: 0;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #282828;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.track-item:hover {
+    background-color: #383838;
+}
+
+.track-rank {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #b3b3b3;
+    width: 50px;
+    text-align: center;
+}
+
+.track-artwork {
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.track-info {
+    flex-grow: 1;
+}
+
+.track-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.track-artist {
+    color: #b3b3b3;
+    margin: 5px 0 0;
+}
